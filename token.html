@@ -254,6 +254,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     owner,
     rinkeby: (token.domain.chainId === 4),
     mainnet: (token.domain.chainId === 1),
+    goerli: (token.domain.chainId === 5),
     address: token.domain.verifyingContract,
     tokenId: token.body.id,
     table: render(meta),

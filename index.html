@@ -136,7 +136,7 @@ class Loader {
       a.setAttribute("data-id", val[4])
       document.querySelector(".container").appendChild(a)
       let id = a.getAttribute("data-id")
-      fetch("../fs/" + id).then((res) => {
+      fetch("fs/" + id).then((res) => {
         return res.json()
       }).then((res) => {
         a.innerHTML = template({

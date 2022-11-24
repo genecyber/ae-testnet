@@ -157,7 +157,7 @@ const params = () => {
 }
 var Params = params()
 const get = (cid) => {
-  return fetch("../fs/" + cid).then((r) => {
+  return fetch("fs/" + cid).then((r) => {
     return r.json()
   })
 }
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (meta.animation_url) {
     src = meta.animation_url
     let cid = meta.animation_url.replace("ipfs://" , "")
-    let srcpath = "../fs/" + cid
+    let srcpath = "fs/" + cid
     if (meta.mime) {
       mime = meta.mime[cid]
     }
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else if (meta.image) {
     src = meta.image
     let cid = meta.image.replace("ipfs://" , "")
-    let srcpath = "../fs/" + cid
+    let srcpath = "fs/" + cid
     if (meta.mime) {
       mime = meta.mime[cid]
     }
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (mime === "image/svg+xml") {
     // SVG is special case scenario
-    fetch("../fs/" + src.replace("ipfs://", "")).then((r) => {
+    fetch("fs/" + src.replace("ipfs://", "")).then((r) => {
       return r.blob()
     }).then((blob) => {
       if (mime) {

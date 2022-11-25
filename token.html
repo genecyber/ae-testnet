@@ -191,7 +191,7 @@ const renderArray = (a) => {
 }
 const renderAttributes = (a) => {
   return attributes.map((attribute) => {
-    return `<tr><td>${attribute.trait_type}</td><td>${attribute.value}</td></tr>`
+    return `<tr><td>${attribute.trait_type}</td><td style='${attribute.trait_type=='Dominant hex'? 'background-color:${attribute.value}':'s'}'>${attribute.value}</td></tr>`
   }).join("")
 }
 document.addEventListener("DOMContentLoaded", async () => {

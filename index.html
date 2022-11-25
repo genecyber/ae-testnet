@@ -113,6 +113,7 @@ class Loader {
     const dataPromise = fetch("db/mixtape.db").then(res => res.arrayBuffer());
     const [SQL, buf] = await Promise.all([sqlPromise, dataPromise])
     this.db = new SQL.Database(new Uint8Array(buf));
+    window.db = this.db
     const web3 = new Web3(window.ethereum)
     this.c0 = new C0()
     this.c0.init({ web3, });
